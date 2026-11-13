@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "蜂群",
+    "description": "受控多 agent 协作：共享蜂巢、任务市场、独立 worktree、评审门禁与三层预算。"
+  },
+  "tool": {
+    "start": "启动蜂群",
+    "status": "蜂群状态",
+    "task": "任务市场",
+    "board": "共享蜂巢"
+  },
+  "panel": {
+    "title": "蜂群",
+    "overview": "概览",
+    "members": "成员",
+    "tasks": "任务",
+    "budget": "预算",
+    "empty": "还没有蜂群运行。从一个仓库目标启动一次运行。",
+    "converged": "已收敛",
+    "running": "运行中",
+    "paused": "已暂停"
+  }
+}

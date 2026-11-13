@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Swarm",
+    "description": "Controlled multi-agent collaboration with a shared hive, task market, isolated worktrees, review gates, and a three-level budget."
+  },
+  "tool": {
+    "start": "Start a swarm",
+    "status": "Swarm status",
+    "task": "Task market",
+    "board": "Shared hive"
+  },
+  "panel": {
+    "title": "Swarm",
+    "overview": "Overview",
+    "members": "Members",
+    "tasks": "Tasks",
+    "budget": "Budget",
+    "empty": "No swarm run yet. Start one from a repository goal.",
+    "converged": "Converged",
+    "running": "Running",
+    "paused": "Paused"
+  }
+}

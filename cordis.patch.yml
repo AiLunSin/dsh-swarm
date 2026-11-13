@@ -1,0 +1,13 @@
+# dsh-swarm bundle layer.
+#
+# The row below is inserted after every built-in bundle layer. A profile-level
+# cordis.patch.yml can override this row by id (for example to change dataDir).
+# `!!js` expressions are allowed by the loader, e.g.
+#   dataDir: !!js process.env.SWARM_DATA_DIR ?? ''
+- insert:
+    - id: dsh-swarm
+      name: dsh-swarm
+      config:
+        members: 3
+        topology: mesh
+        dataDir: ''

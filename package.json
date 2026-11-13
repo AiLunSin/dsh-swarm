@@ -1,0 +1,74 @@
+{
+  "name": "dsh-swarm",
+  "version": "0.1.0",
+  "description": "Controlled agent swarm for DeepSeek Harness: shared hive, task market, worktree isolation, review gates, and a three-level budget.",
+  "license": "MIT",
+  "type": "module",
+  "author": "dsh-swarm contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AiLunSin/dsh-swarm.git"
+  },
+  "homepage": "https://github.com/AiLunSin/dsh-swarm#readme",
+  "bugs": {
+    "url": "https://github.com/AiLunSin/dsh-swarm/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "swarm",
+    "multi-agent",
+    "blackboard",
+    "task-market"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "src",
+    "client.js",
+    "scripts",
+    "bench",
+    "cordis.patch.yml",
+    "locale",
+    "docs",
+    "examples",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/",
+    "test:coverage": "node --test --experimental-test-coverage test/",
+    "lint": "node scripts/check-syntax.mjs",
+    "demo": "node scripts/demo.mjs",
+    "bench": "node bench/run.mjs",
+    "release:build": "node scripts/build-release.mjs",
+    "check": "npm run lint && npm test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

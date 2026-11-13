@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Swarm hive">
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <path d="M32 9l18 10.5v21L32 51 14 40.5v-21L32 9z" fill="none" stroke="#f5b301" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M32 20l9 5.25v10.5L32 41l-9-5.25v-10.5L32 20z" fill="none" stroke="#f5b301" stroke-width="1.5" stroke-linejoin="round" opacity="0.55"/>
+  <g fill="#fde68a">
+    <circle cx="32" cy="20" r="3.2"/>
+    <circle cx="23" cy="35.5" r="3.2"/>
+    <circle cx="41" cy="35.5" r="3.2"/>
+  </g>
+  <g stroke="#fde68a" stroke-width="1.6" opacity="0.8">
+    <path d="M32 23.2v4.3M29.4 28.6l-4.3 4.6M34.6 28.6l4.3 4.6"/>
+  </g>
+</svg>

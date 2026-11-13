@@ -1,0 +1,17 @@
+{
+  "mode": "single",
+  "runId": "swarm_mwexfimu6e7d3c3e2c",
+  "outcome": "converged",
+  "reason": "all_tasks_terminal",
+  "tasks": 1,
+  "merged": 1,
+  "dispatches": 1,
+  "votes": 0,
+  "tokens": 11873,
+  "calls": 9,
+  "events": 25,
+  "createdAt": 1794571322648,
+  "endedAt": 1794571378906,
+  "wallMs": 56258,
+  "at": "2026-11-13T12:03:04.574Z"
+}

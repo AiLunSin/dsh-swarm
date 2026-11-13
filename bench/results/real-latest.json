@@ -1,0 +1,56 @@
+{
+  "suite": "real-model-toy",
+  "runner": "real SubagentRunner via ctx.subagents (DeepSeek Harness session default model)",
+  "environment": {
+    "node": "v26.13.0",
+    "platform": "win32",
+    "date": "2026-11-13"
+  },
+  "workload": {
+    "baseline": "one task implements src/alpha.js + src/beta.js and their tests",
+    "swarm": "two independent tasks, one module each, two workers, cross review, serial merge",
+    "gate": "npm test (node --test)"
+  },
+  "baseline": {
+    "runId": "swarm_mwewohtm0ed69a01cc",
+    "mode": "single",
+    "tasks": 1,
+    "merged": 1,
+    "votes": 0,
+    "dispatches": 1,
+    "tokens": 6059,
+    "calls": 9,
+    "wallMs": 68145,
+    "outcome": "converged"
+  },
+  "swarm": {
+    "runId": "swarm_mwewq6v6654b162951",
+    "mode": "swarm",
+    "tasks": 2,
+    "merged": 2,
+    "votes": 4,
+    "dispatches": 2,
+    "tokens": 9221,
+    "calls": 14,
+    "wallMs": 86229,
+    "outcome": "converged"
+  },
+  "quality": {
+    "baseline": "3/3 tests pass in integration worktree",
+    "swarm": "3/3 tests pass in integration worktree"
+  },
+  "ratios": {
+    "wallTotal": 1.27,
+    "tokenTotal": 1.52,
+    "wallPerTask": 0.63,
+    "tokenPerTask": 0.76,
+    "callsPerTask": 0.78
+  },
+  "notes": [
+    "One sample per mode; manual orchestration in a live DSH session, not a statistically powered benchmark.",
+    "Total wall clock is 27% slower for the swarm on this tiny two-module workload; per-task wall clock is 37% lower.",
+    "Token cost is 52% higher in total and 24% lower per task; both are within the 3x budget ceiling.",
+    "The requirement target (swarm wall <= 70% of single) is NOT met at this workload size; use single mode for small tasks.",
+    "No model-price table was available, so USD cost is not reported."
+  ]
+}

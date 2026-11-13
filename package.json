@@ -54,8 +54,8 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "node --test test/",
-    "test:coverage": "node --test --experimental-test-coverage test/",
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
     "lint": "node scripts/check-syntax.mjs",
     "demo": "node scripts/demo.mjs",
     "bench": "node bench/run.mjs",

@@ -59,7 +59,7 @@
     "lint": "node scripts/check-syntax.mjs",
     "demo": "node scripts/demo.mjs",
     "bench": "node bench/run.mjs",
-    "release:build": "node scripts/build-release.mjs",
+    "release:build": "node scripts/build-release.mjs --name @ailunsin/dsh-swarm",
     "check": "npm run lint && npm test"
   },
   "dsh": {

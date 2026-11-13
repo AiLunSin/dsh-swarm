@@ -2,9 +2,9 @@
   "suite": "real-model-toy",
   "runner": "real SubagentRunner via ctx.subagents (DeepSeek Harness session default model)",
   "environment": {
-    "node": "v26.13.0",
-    "platform": "win32",
-    "date": "2026-11-13"
+    "node": "26.x",
+    "platform": "workstation",
+    "date": "2026-11"
   },
   "workload": {
     "baseline": "one task implements src/alpha.js + src/beta.js and their tests",

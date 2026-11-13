@@ -1,7 +1,7 @@
 # Real-model bench (one sample)
 
 - runner: real subagent (`ctx.subagents`, session default model)
-- environment: Node v26.13.0 / win32 / 2026-11-13
+- environment: Node 26.x / workstation / 2026-11
 - workload: implement `alpha` and `beta` modules + tests, gate `npm test`
 - baseline: one task does both modules
 - swarm: two independent tasks, two workers, cross review, serial merge

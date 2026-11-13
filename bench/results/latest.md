@@ -1,8 +1,8 @@
 # dsh-swarm bench (latest)
 
 - runner: fake (no model calls)
-- node: v26.13.0 / win32
-- at: 2026-11-13T11:37:49.019Z
+- node: 26.x / workstation
+- at: 2026-11
 
 | mode | tasks | merged | wall ms | tokens | calls |
 | --- | --- | --- | --- | --- | --- |

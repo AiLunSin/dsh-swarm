@@ -2,8 +2,8 @@
   "suite": "toy-coordination",
   "runner": "fake (no model calls)",
   "environment": {
-    "node": "v26.13.0",
-    "platform": "win32"
+    "node": "26.x",
+    "platform": "workstation"
   },
   "baseline": {
     "mode": "single",
@@ -27,5 +27,5 @@
     "wall": 2.23,
     "token": 3
   },
-  "at": "2026-11-13T11:37:49.019Z"
+  "at": "2026-11"
 }

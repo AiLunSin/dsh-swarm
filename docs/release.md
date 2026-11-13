@@ -103,8 +103,9 @@ npm pack --dry-run
 npm publish --access public --provenance
 
 # 5. 打 tag 触发 .github/workflows/release.yml
-#    工作流会先构建改名副本，再从 dist/<dir> 发布；包名默认 dsh-swarm-bundle，
-#    也可在 workflow_dispatch 时传 package-name。
+#    tag 推送只做构建 + 校验 + 打包检查，不会发布；真正发布需在
+#    workflow_dispatch 中把 dry-run 设为 false（需先配置 secrets.NPM_TOKEN）。
+#    包名默认 @ailunsin/dsh-swarm，也可在 workflow_dispatch 时传 package-name。
 git tag v0.1.0 && git push origin v0.1.0
 ```
 

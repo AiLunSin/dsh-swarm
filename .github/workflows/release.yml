@@ -54,14 +54,14 @@ jobs:
       - name: Demo
         run: node scripts/demo.mjs
       - name: Publish to npm
-        if: startsWith(github.ref, 'refs/tags/v') && inputs['dry-run'] != true
+        if: github.event_name == 'workflow_dispatch' && inputs['dry-run'] != true
         run: |
           cd "$RELEASE_DIR"
           npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub release
-        if: startsWith(github.ref, 'refs/tags/v') && inputs['dry-run'] != true
+        if: github.event_name == 'workflow_dispatch' && inputs['dry-run'] != true && startsWith(github.ref, 'refs/tags/v')
         run: gh release create "$GITHUB_REF_NAME" --generate-notes --title "$GITHUB_REF_NAME"
         env:
           GH_TOKEN: ${{ github.token }}

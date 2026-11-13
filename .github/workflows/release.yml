@@ -9,7 +9,7 @@ on:
         description: npm package name for the release variant
         type: string
         required: false
-        default: dsh-swarm-bundle
+        default: '@ailunsin/dsh-swarm'
       dry-run:
         description: Build and test without publishing
         type: boolean
@@ -23,7 +23,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_NAME: ${{ inputs['package-name'] || 'dsh-swarm-bundle' }}
+      PACKAGE_NAME: ${{ inputs['package-name'] || '@ailunsin/dsh-swarm' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

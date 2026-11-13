@@ -7,7 +7,7 @@
 | 现象 | 原因 | 处理 |
 | --- | --- | --- |
 | `CONFIG_INVALID` | 配置字段类型/范围不对 | 按报错 `details.field` 修 `cordis.patch.yml`；`config` 是整体替换，不要只写半个分节 |
-| 工具列表没有 `swarm_*` | bundle 未启用或插件加载失败 | `dsh plugin add dsh-swarm`；查看 profile 日志与插件页诊断 |
+| 工具列表没有 `swarm_*` | bundle 未启用或插件加载失败 | `dsh plugin add @ailunsin/dsh-swarm`；查看 profile 日志与插件页诊断 |
 | 面板没有「蜂群」 | 客户端产物未加载 | 刷新页面；确认 `dsh.client` 与 `exports['./client']` 未被改动 |
 | `PLUGIN_ENGINE_MISMATCH` / 版本不满足 | DSH 不在 `>=0.2.2-rc.1 <0.3.0` | 升级/切换 DSH，或调整 `engines.dsh` 前先做契约测试 |
 

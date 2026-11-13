@@ -4,13 +4,14 @@
 
 **Q: 怎么安装？**
 ```bash
-dsh plugin add dsh-swarm
+# 已发布的 npm 包
+dsh plugin add @ailunsin/dsh-swarm
 ```
 本地开发目录用 `dsh plugin add ./dsh-swarm`，或在 Harness 里对目录执行插件安装。安装后侧边栏出现「蜂群」，工具列表出现 12 个 `swarm_*`。
 
 **Q: 怎么卸载？**
 ```bash
-dsh plugin remove dsh-swarm
+dsh plugin remove @ailunsin/dsh-swarm
 ```
 运行数据不会自动删除；如需清理，删除 `$DSH_HOME/swarm/`。
 

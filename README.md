@@ -2,14 +2,15 @@
 
 > 受控多 agent 协作的 DeepSeek Harness 组合包：共享蜂巢、任务市场、独立工作区、评审门禁、三层预算与可回放事件流。
 
-当前版本 **0.1.0（M0–M3）**。目标不是"开更多 agent"，而是让多个 agent 在同一个仓库上**可控地并行、交叉验证、花得住钱**。
+当前版本 **0.1.1（M0–M3）**，已发布到 npm：[`@ailunsin/dsh-swarm`](https://www.npmjs.com/package/@ailunsin/dsh-swarm)。目标不是"开更多 agent"，而是让多个 agent 在同一个仓库上**可控地并行、交叉验证、花得住钱**。
 
 - 需求与设计：[《dsh-swarm 需求单》](../dsh-swarm-需求单.md)、[《dsh-swarm 技术方案》](../dsh-swarm-技术方案.md)
 - 架构说明：[docs/architecture.md](./docs/architecture.md)
 - 配置参考：[docs/config.md](./docs/config.md)
 - 需求覆盖：[docs/status.md](./docs/status.md)
 - 常见问题：[docs/faq.md](./docs/faq.md) · 故障排查：[docs/troubleshooting.md](./docs/troubleshooting.md)
-- 发布清单与包名决策：[docs/release.md](./docs/release.md) · 0.1.0 发布说明：[docs/release-notes-0.1.0.md](./docs/release-notes-0.1.0.md)
+- 发布记录与下一版本清单：[docs/release.md](./docs/release.md) · 0.1.1 发布说明：[docs/release-notes-0.1.1.md](./docs/release-notes-0.1.1.md) · 0.1.0：[docs/release-notes-0.1.0.md](./docs/release-notes-0.1.0.md)
+- npm：[`@ailunsin/dsh-swarm`](https://www.npmjs.com/package/@ailunsin/dsh-swarm)
 
 ---
 
@@ -49,7 +50,7 @@
 | 仓库预检 | `swarm_start` | 目录、写权限、磁盘、git、验收命令五项检查，失败给修复建议 |
 | 本地 HTTP | `GET/POST /swarm/api/*` | 只监听回环；读接口开放，写接口（干预/建任务/合并）需 `http.token` |
 
-**明确的边界（尚未实现，见路线图）**：Web 面板、CLI、npm 发布、bench 对照。冲突自动回合已实现；成员执行通过 `swarm_dispatch` 或 `autoDispatch` 调用真实子代理，协调状态仍由蜂群服务统一记账。
+**明确的边界（见路线图）**：CLI 与按模型价格计费尚未实现；Web 面板、npm 发布、bench 对照已完成。冲突自动回合已实现；成员执行通过 `swarm_dispatch` 或 `autoDispatch` 调用真实子代理，协调状态仍由蜂群服务统一记账。
 
 ---
 
@@ -72,10 +73,10 @@ DSH 已经能把任务委派给子 agent，也有一块共享任务板。但树�
 ### 3.1 安装到 DSH profile
 
 ```bash
-# 发布后（包名待定，见 docs/release.md；npm 上的 dsh-swarm 已被他人预留）
+# 已发布（npm）
 dsh plugin add @ailunsin/dsh-swarm
 
-# 本地开发目录（当前使用的方式，等价于在 Harness 里对目录执行 install_bundle）
+# 本地开发目录（等价于在 Harness 里对目录执行 install_bundle）
 dsh plugin add ./dsh-swarm
 ```
 
@@ -233,7 +234,7 @@ $DSH_HOME/swarm/runs/<runId>/
 | M1 能干活 | 🟡 功能完成 | worktree、真实门禁、串行合并、真实子代理、自动派发与冲突自动回合；bench 对照待 M4 |
 | M2 能收住 | ✅ | 评审超时/僵持、真实用量、停滞/轮次/自适应并发、面板四视图 |
 | M3 能看懂 | ✅ | 拓扑图、时间线回放、成本拆分与 CSV、自适应并发 |
-| M4 能发布 | 🟡 进行中 | bench、release workflow、FAQ/排障、真实模型单样本已完成；npm 发布与浏览器验收待做 |
+| M4 能发布 | ✅ | 已发布 npm `@ailunsin/dsh-swarm@0.1.1`；浏览器人工验收与更多真实 bench 样本待补 |
 
 ---
 
@@ -241,7 +242,7 @@ $DSH_HOME/swarm/runs/<runId>/
 
 ```bash
 npm run lint          # node --check 所有源码
-npm test              # node:test，92 个用例
+npm test              # node:test，93 个用例
 npm run test:coverage # 当前行覆盖 86%
 npm run demo          # 无模型端到端演练
 npm run bench         # single vs swarm 确定性对照，输出 bench/results/

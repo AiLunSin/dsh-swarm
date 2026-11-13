@@ -1,6 +1,6 @@
 {
   "name": "dsh-swarm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Controlled agent swarm for DeepSeek Harness: shared hive, task market, worktree isolation, review gates, and a three-level budget.",
   "license": "MIT",
   "type": "module",

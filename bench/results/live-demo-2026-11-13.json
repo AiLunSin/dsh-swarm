@@ -1,0 +1,33 @@
+{
+  "suite": "live-demo-real-task",
+  "date": "2026-11-13",
+  "environment": {
+    "dsh": "0.2.2-rc.3",
+    "node": "v26.13.0",
+    "platform": "win32"
+  },
+  "runId": "swarm_mwf1i5nw5871a2fdf8",
+  "goal": "在 demo 仓库实现 slugify、truncate、chunk 三个独立模块及测试，全部通过 npm test",
+  "mode": "swarm",
+  "members": 4,
+  "autoDispatch": true,
+  "tasks": [
+    { "title": "slugify", "commit": "83b9bb8", "files": ["src/slugify.js", "test/slugify.test.js"] },
+    { "title": "truncate", "commit": "29364ac", "files": ["src/truncate.js", "test/truncate.test.js"] },
+    { "title": "chunk", "commit": "9fd6be2", "files": ["src/chunk.js", "test/chunk.test.js"] }
+  ],
+  "reviews": { "approvals": 6, "rejections": 0 },
+  "merges": 3,
+  "integrationCommits": ["fef597d", "528e54a", "4e3a68d"],
+  "integrationTests": { "tests": 26, "passed": 26, "failed": 0 },
+  "usage": { "tokens": 62183, "limit": 80000, "calls": 23 },
+  "wallMs": 203321,
+  "outcome": "converged",
+  "convergedReason": "all_tasks_terminal",
+  "incident": {
+    "symptom": "auto dispatch failed immediately with Cannot read properties of undefined (reading 'id')",
+    "cause": "DSH 0.2.2-rc.3 startActivation expects a flat SubagentActivationSpec; the plugin passed a nested request field, so parent was undefined",
+    "fix": "src/runner.js now passes provider/label/parent/cwd/prompt/outputSchema/maxDepth/signal/delivery at the top level",
+    "regressionTest": "test/runner.test.js asserts the flat activation spec and parent binding"
+  }
+}

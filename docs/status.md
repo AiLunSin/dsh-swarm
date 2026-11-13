@@ -114,7 +114,7 @@
 | FR-11.8 | ✅ | 工具名与状态键独立，不与 agent-team 冲突 |
 | FR-12.1 | ✅ | README 中英、LICENSE、CONTRIBUTING、SECURITY、CHANGELOG |
 | FR-12.2 | ✅ | GitHub Actions 三平台 × 两 Node 版本 |
-| FR-12.3 | ⬜ | npm 发布在 M4 |
+| FR-12.3 | ✅ | 已发布 npm `@ailunsin/dsh-swarm@0.1.0`，并通过 registry 安装验证 |
 | FR-12.4 | 🟡 | 无模型 demo 脚本 + 确定性 bench；GIF 在发布前补 |
 | FR-12.5 | ✅ | quickstart/architecture/config/FAQ/故障排查 |
 | FR-12.6 | 🟡 | 真实模型单样本已完成（总墙钟未达 70% 目标）；需多任务 suite 与重复试验 |

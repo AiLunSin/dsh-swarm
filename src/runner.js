@@ -110,14 +110,12 @@ export class SubagentRunner {
     const activation = await subagents.startActivation({
       provider: this.provider,
       label: input.label,
-      request: {
-        parent: input.agent,
-        cwd: input.cwd,
-        prompt: [{ type: 'text', text: input.prompt }],
-        outputSchema: HANDOFF_SCHEMA,
-        // A worker may exist at depth 1; it must not spawn grandchildren.
-        maxDepth: 1,
-      },
+      parent: input.agent,
+      cwd: input.cwd,
+      prompt: [{ type: 'text', text: input.prompt }],
+      outputSchema: HANDOFF_SCHEMA,
+      // A worker may exist at depth 1; it must not spawn grandchildren.
+      maxDepth: 1,
       signal: input.signal,
       delivery: 'caller',
     })

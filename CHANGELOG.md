@@ -4,7 +4,21 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - M1a/M1b/M2a/M2b/M2c
+## [0.1.1] - 2026-11-13
+
+### Fixed
+
+- DSH 0.2.2-rc.3 compatibility: `startActivation` now receives the flat activation spec (`parent`/`cwd`/`prompt` at top level); the nested `request` shape made auto-dispatch fail. Regression test added.
+
+### Added
+
+- Live real-task demo: 3 modules implemented by 3 auto-dispatched workers, 6 approvals, 3 serial merges, 26/26 integration tests, 62,183 tokens / 23 calls / 203 s.
+
+## [0.1.0] - 2026-11-13
+
+### Published
+
+- Published to npm as `@ailunsin/dsh-swarm@0.1.0` on 2026-11-13; installed from the registry and verified (`swarm_status`, HTTP health, sidebar/panel slots, messaging + secret redaction).
 
 ### Added
 

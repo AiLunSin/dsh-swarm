@@ -1,6 +1,6 @@
 # dsh-swarm 0.1.0 release notes
 
-首个公开版本（未发布到 npm，见 [release.md](./release.md)）：把受控多 agent 蜂群做成可安装的 DSH 组合包。
+首个公开版本，已发布到 npm：[`@ailunsin/dsh-swarm@0.1.0`](https://www.npmjs.com/package/@ailunsin/dsh-swarm)。把受控多 agent 蜂群做成可安装的 DSH 组合包。
 
 ## 亮点
 
@@ -22,23 +22,24 @@
 
 ## 验证
 
-- 92 个 `node:test` 用例，覆盖事件链、状态机、市场、租约、黑板、信息素、消息总线、拓扑路由、评审、预算、worktree、门禁、合并、冲突、派发、用量、停滞、轮次、扩缩、动态成员、拓扑、CSV、HTTP 写接口、发布构建。
+- 93 个 `node:test` 用例，覆盖事件链、状态机、市场、租约、黑板、信息素、消息总线、拓扑路由、评审、预算、worktree、门禁、合并、冲突、派发、用量、停滞、轮次、扩缩、动态成员、拓扑、CSV、HTTP 写接口、发布构建、子代理激活。
 - 真实子代理 live 验证：实现 `add()`、3/3 测试、commit、双评审、双门禁、合并、收敛；自动派发 run 产生 8 次 `swarm/budget/charged`，5629 tokens / 8 calls。
 - `npm run demo`：真实 git + `npm test` 门禁的端到端演练。
 - `npm run bench`：确定性 single vs swarm 对照（fake runner，仅协调开销）。
 
 ## 已知限制
 
-1. **npm 包名被占用**：`dsh-swarm` 由另一位作者预留；公开前需改用 `@ailunsin/dsh-swarm`、`dsh-swarm-bundle` 等名称。
+1. **发布名使用 scope**：无 scope 的 `dsh-swarm` 仍属另一位作者；本版本发布为 `@ailunsin/dsh-swarm`。
 2. **真实模型 bench 只有两组单样本**：2 模块轮 swarm 总墙钟 1.27x/token 1.52x；3 模块轮 1.37x/1.02x，per-task 墙钟 0.46x。总墙钟均未达 ≤70% 目标，需要更大 suite 与重复试验。
 3. **面板未浏览器人工验收**：槽位注册与 HTTP 数据已验证，视觉/交互仍需人工确认。
-4. 拓扑边来自评审与任务依赖，暂无点对点消息；成本无角色/模型维度；USD 固定 0。
+4. 拓扑边仅来自评审与任务依赖，未把消息往来画成边；成本无模型维度；USD 固定 0。
 5. 成员可动态增减，但新增成员从 idle 开始，不继承历史负载；退出成员保留用于审计。
 6. 门禁与合并在 run 锁内执行，长门禁会阻塞同一运行的其他命令。
 
 ## 快速开始
 
 ```bash
+dsh plugin add @ailunsin/dsh-swarm
 node scripts/demo.mjs
 npm test
 npm run bench

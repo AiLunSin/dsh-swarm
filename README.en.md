@@ -2,7 +2,7 @@
 
 > Controlled multi-agent collaboration for DeepSeek Harness: a shared hive, a task market, isolated worktrees, review gates, and a three-level budget.
 
-Version **0.1.0 (M0–M3)**. The point is not to run more agents; it is to make several agents on one repository **safe to start, cheap to run, and possible to stop**.
+Version **0.1.1 (M0–M3)**, published on npm as [`@ailunsin/dsh-swarm`](https://www.npmjs.com/package/@ailunsin/dsh-swarm). The point is not to run more agents; it is to make several agents on one repository **safe to start, cheap to run, and possible to stop**.
 
 - Requirements and design live in the Chinese documents next to this repository (`dsh-swarm-需求单.md`, `dsh-swarm-技术方案.md`).
 - Architecture: [docs/architecture.md](./docs/architecture.md) · Configuration: [docs/config.md](./docs/config.md)
@@ -40,16 +40,16 @@ Not implemented yet: the Web panel and the CLI.
 
 ```bash
 node scripts/demo.mjs   # worktree + gate + review + merge, no model calls
-npm test                # 92 tests
+npm test                # 93 tests
 npm run bench           # deterministic single vs swarm comparison
 ```
 
 Install into a profile:
 
 ```bash
-# published name is pending; npm's dsh-swarm is reserved by another author
+# published package
 dsh plugin add @ailunsin/dsh-swarm
-# current local development install:
+# local development install:
 dsh plugin add ./dsh-swarm
 ```
 
